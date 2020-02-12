@@ -5,7 +5,8 @@
 /.pnp
 .pnp.js
 
-# API
+# api keys
+.env
 /src/config.js
 
 # testing

@@ -1,3 +1,7 @@
+Notes:
+- Used .env instead of a config.js file to store the Flickr API Key.
+- Did not use context because it seems like overkill on this scale.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
