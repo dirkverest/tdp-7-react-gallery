@@ -128,22 +128,23 @@ input {
 
 /* Custom CSS */
 
-.App-loader {
-  height: 50px;
-  pointer-events: none;
+.photo-container .loading {
+  width: 100%;
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-loader {
-    animation: App-loader-spin infinite 2s linear;
-  }
+.loader {
+  margin-left: auto;
+  margin-right: auto;
+  border: 12px solid #d8efff; /* Light grey */
+  border-top: 12px solid #438bbd; /* Blue */
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  animation: spin 1.4s linear infinite;
 }
 
-@keyframes App-loader-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

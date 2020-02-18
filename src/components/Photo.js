@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Photo() {
+export default function Photo({photoData}) {
     return ( 
         <li>
-            <img src={"https://farm5.staticflickr.com/4334/37032996241_4c16a9b530.jpg"} alt="null" />
+            <img src={`https://farm${photoData.farm}.staticflickr.com/${photoData.server}/${photoData.id}_${photoData.secret}.jpg`} alt={photoData.title} />
         </li>
     )
 }

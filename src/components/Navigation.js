@@ -1,13 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-export default function Navigation() {
+export default function Navigation(props) {
+
     return (
         <nav className="main-nav">
             <ul>
-                <li><NavLink to="/newyork" activeClassName="active">New York</NavLink></li>
-                <li><NavLink to="/manhattan" activeClassName="active">Manhattan</NavLink></li>
-                <li><NavLink to="/soho" activeClassName="active">Soho</NavLink></li>
+                <li><NavLink exact to="/sunsets" activeClassName="active" >Sunset</NavLink></li>
+                <li><NavLink exact to="/waterfalls" activeClassName="active">Waterfalls</NavLink></li>
+                <li><NavLink exact to="/rainbows" activeClassName="active">Rainbows</NavLink></li>
             </ul>
         </nav>
     )
