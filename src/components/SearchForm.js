@@ -1,26 +1,36 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class SearchForm extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-          searchValue: null
+          searchQuery: ""
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
     }
 
+    // Submit and clear search
     handleSubmit(e) {
         e.preventDefault();
-        this.props.history.push(`/search/${this.state.searchValue}`);
+        if(this.state.searchQuery !== ""){
+            this.props.searchFor(this.state.searchQuery);
+            // Push the url to history
+            this.props.history.push(`/search/${this.state.searchQuery}`);
+        }
+        this.setState({
+            searchQuery: ""
+        })
         e.currentTarget.reset();
     }
 
+    // Save for input on change
     handleInputChange(e) {
         this.setState({
-            searchValue: e.target.value
+            searchQuery: e.target.value
         })
     }
     
@@ -42,6 +52,10 @@ class SearchForm extends Component {
             </form>
         )
     }
+}
+
+SearchForm.propTypes = {
+    searchFor: PropTypes.func.isRequired
 }
 
 export default withRouter(SearchForm);

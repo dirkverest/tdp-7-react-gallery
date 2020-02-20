@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Display loading message and animation
 export default function Loading() {
     return ( 
         <li className="loading">
